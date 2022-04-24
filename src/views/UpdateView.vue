@@ -74,11 +74,13 @@ if(this.detail){
         ...this.data,
         genres : Object.keys(this.genreList).filter(key => {
         return this.genreList[key] === true
-      })
+      },
+      this.$router.push({path:'/'}))
       })
     },
   deleteData(){
     this.deleteMovie(this.data.id)
+    this.$router.push({path:'/'})
   }
   }
 }

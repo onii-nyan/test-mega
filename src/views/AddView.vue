@@ -50,13 +50,13 @@ export default {
     ...mapActions(['addMovie']),
     storing(){
       this.addMovie({
-      id : Date.now(),
-      title : this.title ,
-      director : this.director,
-      summary : this.summary,
-      genres : Object.keys(this.genres).filter(key => {
-        return this.genres[key] === true
-      })
+        id : Date.now(),
+        title : this.title ,
+        director : this.director,
+        summary : this.summary,
+        genres : Object.keys(this.genres).filter(key => {
+          return this.genres[key] === true
+        }, this.$router.push({path:'/'}))
       })
       // movies.join(localStorage)
     }
